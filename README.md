@@ -51,9 +51,9 @@ The project aims to:
 
 The initial MEMS representation is based on a forced mass-spring-damper system:
 
-$$
+```math
 m\ddot{x}(t) + c\dot{x}(t) + kx(t) = F(t)
-$$
+```
 
 where:
 
@@ -65,15 +65,15 @@ where:
 
 The corresponding acceleration is obtained from:
 
-$$
+```math
 \ddot{x}(t)
 =
 \frac{F(t)-c\dot{x}(t)-kx(t)}{m}
-$$
+```
 
 A nonlinear extension can additionally be considered:
 
-$$
+```math
 m\ddot{x}(t)
 +
 c\dot{x}(t)
@@ -83,7 +83,7 @@ kx(t)
 \alpha x^3(t)
 =
 F(t)
-$$
+```
 
 where:
 
@@ -149,22 +149,22 @@ The physical system is simulated numerically to generate displacement, velocity,
 
 The system state can be written as:
 
-$$
+```math
 \mathbf{x}(t)
 =
 \begin{bmatrix}
 x(t) \\
 \dot{x}(t)
 \end{bmatrix}
-$$
+```
 
 The governing second-order differential equation is transformed into a first-order system suitable for numerical integration.
 
-The model provides a controlled environment in which parameters such as
+The model provides a controlled environment in which parameters such as:
 
-$$
+```math
 m,\qquad c,\qquad k
-$$
+```
 
 can be varied systematically.
 
@@ -186,7 +186,7 @@ The measurement process can include:
 
 A simplified measurement representation can be written as:
 
-$$
+```math
 y(t)
 =
 g\,x(t)
@@ -194,7 +194,7 @@ g\,x(t)
 b
 +
 \varepsilon(t)
-$$
+```
 
 where:
 
@@ -224,32 +224,32 @@ The analysis includes methods such as:
 
 The discrete Fourier transform can be expressed as:
 
-$$
+```math
 X_k
 =
 \sum_{n=0}^{N-1}
 x_n
 e^{-i2\pi kn/N}
-$$
+```
 
 Frequency-domain methods provide information about characteristic frequencies and dynamic behaviour before model identification is performed.
 
 For a linear mass-spring system, the undamped natural angular frequency is:
 
-$$
+```math
 \omega_n
 =
 \sqrt{\frac{k}{m}}
-$$
+```
 
 and the corresponding natural frequency is:
 
-$$
+```math
 f_n
 =
 \frac{1}{2\pi}
 \sqrt{\frac{k}{m}}
-$$
+```
 
 ---
 
@@ -259,19 +259,19 @@ Classical identification methods are used to estimate physical system parameters
 
 The estimated quantities can include:
 
-$$
+```math
 m,\qquad c,\qquad k
-$$
+```
 
 as well as derived quantities such as natural frequency and damping characteristics.
 
 For example, the damping ratio of the linear system is:
 
-$$
+```math
 \zeta
 =
 \frac{c}{2\sqrt{km}}
-$$
+```
 
 The estimated parameters can then be compared directly with the known ground-truth values of the synthetic system.
 
@@ -289,11 +289,11 @@ SINDy searches for sparse governing equations from a library of candidate mathem
 
 The general formulation is:
 
-$$
+```math
 \dot{\mathbf{X}}
 =
 \Theta(\mathbf{X})\Xi
-$$
+```
 
 where:
 
@@ -306,7 +306,7 @@ The objective is to recover equations resembling the underlying physical dynamic
 
 For the mechanical system, the expected structure is related to:
 
-$$
+```math
 \ddot{x}
 =
 \frac{1}{m}F
@@ -314,7 +314,7 @@ $$
 \frac{c}{m}\dot{x}
 -
 \frac{k}{m}x
-$$
+```
 
 A successful equation-discovery method should therefore identify the physically relevant terms while suppressing unnecessary ones.
 
@@ -328,11 +328,11 @@ Unlike conventional regression models, the mathematical structure itself is part
 
 A symbolic model may therefore take a general form such as:
 
-$$
+```math
 y
 =
 f(x_1,x_2,\ldots,x_n)
-$$
+```
 
 where the function $f$ is discovered from the data rather than predefined.
 
@@ -365,17 +365,17 @@ The purpose is not only to maximize predictive performance, but also to investig
 
 Probabilistic models are used to represent predictive uncertainty explicitly.
 
-Instead of producing only a point estimate
+Instead of producing only a point estimate:
 
-$$
+```math
 \hat{y}
-$$
+```
 
 a probabilistic model estimates a predictive distribution:
 
-$$
+```math
 p(y\mid x)
-$$
+```
 
 This allows uncertainty in predictions to be quantified directly.
 
@@ -383,7 +383,7 @@ Gaussian Process regression is one of the probabilistic approaches investigated.
 
 A Gaussian Process is defined as:
 
-$$
+```math
 f(x)
 \sim
 \mathcal{GP}
@@ -391,7 +391,7 @@ f(x)
 m(x),
 k(x,x')
 \right)
-$$
+```
 
 where:
 
@@ -408,14 +408,14 @@ Physics-informed approaches incorporate knowledge of the governing dynamical sys
 
 A generic physics-informed objective can be written as:
 
-$$
+```math
 \mathcal{L}
 =
 \mathcal{L}_{\text{data}}
 +
 \lambda
 \mathcal{L}_{\text{physics}}
-$$
+```
 
 where:
 
@@ -425,7 +425,7 @@ where:
 
 For the linear MEMS model, a physics residual can be defined as:
 
-$$
+```math
 r(t)
 =
 m\ddot{x}(t)
@@ -435,15 +435,15 @@ c\dot{x}(t)
 kx(t)
 -
 F(t)
-$$
+```
 
 A physics-informed model should ideally satisfy:
 
-$$
+```math
 r(t)
 \approx
 0
-$$
+```
 
 while also reproducing the available measurement data.
 
@@ -465,9 +465,9 @@ The objective is to distinguish predictive relationships from physically meaning
 
 For example, an intervention on stiffness may be represented conceptually as:
 
-$$
+```math
 do(k = k^\ast)
-$$
+```
 
 and its influence on system response can then be evaluated.
 
@@ -481,7 +481,7 @@ Monte Carlo simulation is used as the main uncertainty-analysis framework.
 
 Let the uncertain parameter vector be:
 
-$$
+```math
 \boldsymbol{\theta}
 =
 \begin{bmatrix}
@@ -490,50 +490,50 @@ c &
 k &
 \ldots
 \end{bmatrix}^{T}
-$$
+```
 
 Samples are drawn from prescribed probability distributions:
 
-$$
+```math
 \boldsymbol{\theta}^{(i)}
 \sim
 p(\boldsymbol{\theta})
-$$
+```
 
 For every realization, the dynamical system is simulated:
 
-$$
+```math
 \boldsymbol{\theta}^{(i)}
 \rightarrow
 \text{simulation}
 \rightarrow
 y^{(i)}
-$$
+```
 
 Repeating this process for many realizations produces an ensemble:
 
-$$
+```math
 \left\{
 y^{(1)},
 y^{(2)},
 \ldots,
 y^{(N)}
 \right\}
-$$
+```
 
 The sample mean can then be estimated as:
 
-$$
+```math
 \bar{y}
 =
 \frac{1}{N}
 \sum_{i=1}^{N}
 y^{(i)}
-$$
+```
 
 and the sample standard deviation as:
 
-$$
+```math
 s_y
 =
 \sqrt{
@@ -543,15 +543,15 @@ s_y
 y^{(i)}-\bar{y}
 \right)^2
 }
-$$
+```
 
 The coefficient of variation is calculated using:
 
-$$
+```math
 CV
 =
 \frac{s_y}{\bar{y}}
-$$
+```
 
 The Monte Carlo ensemble is used to investigate:
 
