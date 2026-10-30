@@ -1,0 +1,9 @@
+candidate_term,active,normalized_coefficient,physical_coefficient
+1,False,0.0,0.0
+x,True,-423.3384532741354,-1000.0000000000148
+x_dot,True,-1.0794970296137958,-0.08000000000000454
+F,True,99.4862235426493,0.9999999999999944
+x^2,False,0.0,0.0
+x*x_dot,False,0.0,0.0
+x_dot^2,False,0.0,0.0
+x^3,False,0.0,0.0

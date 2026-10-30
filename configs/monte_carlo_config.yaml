@@ -1,0 +1,73 @@
+# ============================================================
+# Monte Carlo configuration
+# ============================================================
+
+monte_carlo:
+  seed: 9512
+
+  number_of_simulations: 1000
+
+  save_individual_time_series: false
+
+  convergence_check:
+    enabled: true
+
+    sample_sizes:
+      - 100
+      - 250
+      - 500
+      - 1000
+
+uncertain_parameters:
+
+  mass:
+    distribution: "normal"
+    mean: 1.0
+    standard_deviation: 0.03
+    minimum: 0.85
+    maximum: 1.15
+
+  damping:
+    distribution: "normal"
+    mean: 0.08
+    standard_deviation: 0.008
+    minimum: 0.04
+    maximum: 0.12
+
+  stiffness:
+    distribution: "normal"
+    mean: 1000.0
+    standard_deviation: 50.0
+    minimum: 800.0
+    maximum: 1200.0
+
+  nonlinear_stiffness:
+    distribution: "uniform"
+    minimum: 0.0
+    maximum: 50.0
+
+  temperature:
+    distribution: "uniform"
+    minimum: -20.0
+    maximum: 80.0
+
+measurement_uncertainty:
+
+  noise_standard_deviation:
+    distribution: "uniform"
+    minimum: 0.0
+    maximum: 0.05
+
+  sensor_gain:
+    distribution: "normal"
+    mean: 1.0
+    standard_deviation: 0.01
+    minimum: 0.95
+    maximum: 1.05
+
+  sensor_bias:
+    distribution: "normal"
+    mean: 0.0
+    standard_deviation: 0.01
+    minimum: -0.05
+    maximum: 0.05

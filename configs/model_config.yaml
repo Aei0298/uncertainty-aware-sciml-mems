@@ -1,0 +1,69 @@
+# ============================================================
+# Model configuration
+# ============================================================
+
+system_identification:
+
+  estimate_parameters:
+    - damping
+    - stiffness
+
+  include_nonlinearity: false
+
+
+equation_discovery:
+
+  sindy:
+    enabled: true
+
+    polynomial_degree: 3
+
+    include_bias: true
+
+    threshold: 0.05
+
+  symbolic_regression:
+    enabled: true
+
+    operators:
+      binary:
+        - "+"
+        - "-"
+        - "*"
+
+      unary: []
+
+
+machine_learning:
+
+  statistical_baseline:
+    enabled: true
+
+  nonlinear_model:
+    enabled: true
+
+
+probabilistic_ml:
+
+  gaussian_process:
+    enabled: true
+
+
+physics_informed_ml:
+
+  enabled: true
+
+  architecture: "grey_box_residual"
+
+  physics_weight: 1.0
+
+
+causal_analysis:
+
+  enabled: true
+
+  treatment_variable: "temperature"
+
+  outcome_variable: "stiffness"
+
+  use_known_ground_truth: true

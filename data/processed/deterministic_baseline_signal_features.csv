@@ -1,0 +1,2 @@
+signal_mean,signal_standard_deviation,signal_rms,signal_minimum,signal_maximum,fft_dominant_frequency,fft_dominant_magnitude,psd_dominant_frequency,psd_dominant_value,fft_frequency_error_hz,psd_frequency_error_hz
+0.05821324861539585,3.0746213849075974,3.0751724248967682,-6.122565924401688,6.375896240523287,4.999750012499375,3.6819794263476546,4.8828125,4.657033987020171,0.033170987500625415,0.15010849999999998

@@ -1,0 +1,9 @@
+quantity,value
+Causal-ML local effect,0.002521877662185271
+Physics average local effect,0.0025176608516413756
+Local-effect absolute error,4.216810543895486e-06
+Local-effect relative error percent,0.1674892208434809
+Physics +50 intervention effect,0.12434393117712471
+Causal-ML +50 intervention effect,0.12609388310926356
+Intervention absolute error,0.0017499519321388518
+Intervention relative error percent,1.4073480833142475

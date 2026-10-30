@@ -1,0 +1,3 @@
+method,x_coefficient,velocity_coefficient,force_coefficient,reconstruction_rmse
+SINDy,-1000.0,-0.08,1.0,3.697911710498e-14
+Refined symbolic regression,-1000.0133985983132,-0.0794396976045741,0.9990936816844478,0.000636554570108137

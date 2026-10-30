@@ -1,0 +1,5 @@
+quantity,value
+Injected noise std,0.05
+GP learned noise std,0.05023216721341186
+Absolute error,0.00023216721341185603
+Relative error percent,0.46433442682371207

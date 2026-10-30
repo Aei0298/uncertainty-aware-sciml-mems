@@ -1,0 +1,4 @@
+model,rmse
+Initial unscaled symbolic regression,3.0035330609071917
+Standardized symbolic regression,0.09481522611827096
+Refined symbolic regression,0.000636554570108137
